@@ -27,11 +27,12 @@ class RestResponse<T> {
       r.code = this.CODE_OK;
       r.message = this.SUCCESS_MESSAGE;
       r.data = p;
+      return r;
     }
   }
 
-  public static fail(message: string) {
-    return new RestResponse(this.CODE_ERROR, message);
+  public static fail(message?: string) {
+    return new RestResponse(this.CODE_ERROR, message || this.FAIL_MESSAGE);
   }
 }
 

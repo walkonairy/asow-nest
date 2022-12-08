@@ -7,13 +7,10 @@ class Account extends BaseEntity {
   username: string;
 
   @Column({ type: 'varchar' })
-  nickname: string;
-
-  @Column({ type: 'varchar' })
   password: string;
 
   @Column({ type: 'varchar' })
-  email: string;
+  salt: string;
 
   @Column({ type: 'datetime' })
   lastLoginTime: Date;
