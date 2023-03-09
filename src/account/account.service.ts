@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import Account from '../entity/account.entity';
-import { encryptPassword, makeSalt } from '@/utils/auth/cryptogram';
+import Account from '@/account/account.entity';
+import { encryptPassword, makeSalt } from '@/auth/jwt/cryptogram';
 import Result from '@/dto/result';
 
 @Injectable()

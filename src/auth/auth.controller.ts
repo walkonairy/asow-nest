@@ -1,8 +1,8 @@
-import { AuthService } from '@/service/auth.service';
+import { AuthService } from '@/auth/auth.service';
 import { Body, Controller, Post, Request } from '@nestjs/common';
-import Account from '@/entity/account.entity';
+import Account from '@/account/account.entity';
 import RestResponse from '@/dto/response';
-import JwtToken from '@/utils/auth/jwt.token';
+import JwtToken from '@/auth/jwt/jwt.token';
 
 @Controller('/auth')
 export class AuthController {
@@ -10,10 +10,13 @@ export class AuthController {
 
   @Post('/login')
   async login(@Body() params: Account) {
+    console.log(params);
     const authResult = await this.authService.validateUser(
       params.username,
       params.password,
     );
+
+    console.log(authResult);
 
     if (authResult.isOk) {
       const jwt = this.authService.certificate(authResult.data);

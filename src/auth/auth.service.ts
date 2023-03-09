@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { AccountService } from '@/service/account.service';
-import { matches } from '@/utils/auth/cryptogram';
-import JwtToken from '@/utils/auth/jwt.token';
-import Account from '@/entity/account.entity';
+import { AccountService } from '@/account/account.service';
+import { matches } from '@/auth/jwt/cryptogram';
+import JwtToken from '@/auth/jwt/jwt.token';
+import Account from '@/account/account.entity';
 import Result from '@/dto/result';
 
 @Injectable()

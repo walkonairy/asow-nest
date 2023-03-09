@@ -8,7 +8,7 @@ const productConfig = TypeOrmModule.forRoot({
   password: '123456',
   database: 'asow',
   synchronize: true,
-  entities: ['dist/entity/*.entity{.ts,.js}'],
+  entities: ['dist/**/*.entity{.ts,.js}'],
 });
 
 const localConfig = TypeOrmModule.forRoot({
@@ -19,7 +19,7 @@ const localConfig = TypeOrmModule.forRoot({
   password: '123456',
   database: 'asow',
   synchronize: true,
-  entities: ['dist/entity/*.entity{.ts,.js}'],
+  entities: ['dist/**/*.entity{.ts,.js}'],
 });
 
 const dbConfig = process.env.NODE_ENV ? productConfig : localConfig;
